@@ -20,9 +20,13 @@
     --fw-sb: 600;
     --fw-b: 700;
 
-    --plus: #AD28EB;
-    --minus: #301534;
-    --star: #AD28EB;
+    --darkPurple: #301534;
+    --lightPurple: #AD28EB;
+}
+
+:focus {
+    outline: 2px solid var(--lightPurple);
+    outline-offset: 0.1rem;
 }
 
 *,
@@ -53,11 +57,6 @@ BODY {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-}
-
-:focus {
-    outline: 2px solid red;
-    outline-offset: 0.1rem;
 }
 
 IMG {
@@ -112,15 +111,15 @@ SVG {
 }
 
 .plus_icon {
-    fill: var(--plus);
+    fill: var(--lightPurple);
 }
 
 .minus_icon {
-    fill: var(--minus);
+    fill: var(--darkPurple);
 }
 
 .star_icon {
-    fill: var(--star);
+    fill: var(--lightPurple);
     width: 1.5rem;
     height: 1.5rem;
 }
@@ -139,7 +138,7 @@ ARTICLE {
     padding: 2rem;
     border-radius: 1rem;
     width: 100%;
-    max-width: 450px;
+    max-width: 600px;
 }
 
 .header {
@@ -156,7 +155,7 @@ ARTICLE {
     flex-direction: column;
     justify-content: flex-start;
     align-items: space-between;
-    gap: 1rem;
+    gap: .5rem;
     padding: 1rem 0;
 }
 
@@ -170,6 +169,19 @@ ARTICLE {
     font-weight: var(--fw-sb);
 }
 
-.attribution A {
+.attribution P {
+
     color: var(--darkPurple);
+}
+
+.attribution A {
+    color: var(--lightPurple);
+}
+
+@media (hover:hover) {
+
+    BUTTON:hover .icon_container,
+    A:hover {
+        filter: hue-rotate(20deg);
+    }
 }
